@@ -18,27 +18,31 @@ $dataAffiliation = findAffiliationById($id_affiliation);
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<link rel="short icon" href="./img/crow-head-vector-24390236.jpg">
 	<script type="text/javascript" src="js/main.js"></script>
+	<link rel="stylesheet" href="./css/loading.css">
 </head>
 
-<body>
+<body class="preloading">
+	<div class="load">
+		<img src="./img/loading.gif">
+	</div>
 	<?php require_once './header.php' ?>
 
 	<!-- end header -->
 
 	<section class="main clearfix">
-		<section class="top" style="background-image:url('./img/<?=$dataAffiliation['image_affiliation']?>');">
+		<section class="top" style="background-image:url('./img/<?= $dataAffiliation['image_affiliation'] ?>');">
 			<div class="wrapper content_header clearfix">
-				<h1 class="title"><?=$dataAffiliation['name_affiliation'] ?></h1>
+				<h1 class="title"><?= $dataAffiliation['name_affiliation'] ?></h1>
 			</div>
 		</section><!-- end top -->
 
 		<section class="wrapper">
 			<div class="content">
-				<?=$dataAffiliation['history_affiliation']?>
+				<?= $dataAffiliation['history_affiliation'] ?>
 			</div><!-- end content -->
 		</section>
 	</section><!-- end main -->
-
+	<script src="./js/loading.js"></script>
 </body>
 
 </html>

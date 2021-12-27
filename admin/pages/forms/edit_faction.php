@@ -31,7 +31,7 @@ if (isset($_POST['update'])) {
     $history_faction = $_POST['history_faction'];
     $class_faction = $_POST['class_faction'];
     $id_affiliation = $_POST['id_affiliation'];
-
+    $id_faction = $_GET['id_faction'];
 
     if (isset($_FILES['image_faction'])) {
         $file = $_FILES['image_faction'];

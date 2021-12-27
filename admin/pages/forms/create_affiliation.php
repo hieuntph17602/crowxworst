@@ -3,22 +3,22 @@ session_start();
 require_once './../../../db/connection.php';
 require_once './../../../db/location.php';
 require_once './../../../db/affiliation.php';
-$conn = mysqli_connect('localhost', 'root', '', 'crow');
-if ($conn) {
-    mysqli_query($conn, "SET NAMES 'UTF8'");
+$con = mysqli_connect('localhost', 'root', '', 'crow');
+if ($con) {
+    mysqli_query($con, "SET NAMES 'UTF8'");
 }
 
 $data_location = getAllLocation();
 
 if (isset($_POST['submit'])) {
 
-    $data = [
-        'name_affiliation' => $_POST['name_affiliation'],
-        'history_affiliation' => $_POST['history_affiliation'],
-        'class_affiliation' => $_POST['class_affiliation'],
-        'id_location' => $_POST['id_location'],
-        'image_affiliation' => $_FILES['image_affiliation']['name'],
-    ];
+    // $data = [
+       $name_affiliation = $_POST['name_affiliation'];
+       $history_affiliation = $_POST['history_affiliation'];
+       $class_affiliation = $_POST['class_affiliation'];
+       $id_location = $_POST['id_location'];
+       $image_affiliation = $_FILES['image_affiliation']['name'];
+    // ];
 
 
     if (isset($_FILES['image_affiliation'])) {
@@ -34,10 +34,13 @@ if (isset($_POST['submit'])) {
             move_uploaded_file($files['tmp_name'][$key], './../../../img/' . $value);
         }
     }
-    insertAffiliation($data);
-    $id_affiliation = mysqli_insert_id($conn);
+    $conn = getConnection();
+    $sql  = "INSERT INTO affiliations(`name_affiliation`, `history_affiliation`,`id_location`,`image_affiliation`,`class_affiliation`) VALUES('$name_affiliation', '$history_affiliation','$id_location','$file_name','$class_affiliation')";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $id_affiliation = $conn->lastInsertId();
     foreach ($file_names as $key => $value) {
-        mysqli_query($conn, "INSERT INTO img_affiliation(id_affiliation,images) VALUES('$id_affiliation','$value')");
+        $conn->query("INSERT INTO img_affiliation(id_affiliation,images) VALUES('$id_affiliation','$value')");
     }
     header("location:/crowxworst/admin/pages/tables/list_affiliation.php");
 }
@@ -134,15 +137,6 @@ if (isset($_POST['submit'])) {
                                             <span class="input-group-text">Upload</span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" disabled>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" disabled>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" disabled>
                                 </div>
                                 <div class="form-group">
                                     <label for="history_affiliation">Lịch sử chi nhánh</label>

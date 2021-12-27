@@ -1,7 +1,7 @@
 <?php
-require_once './db/location.php';
+require_once './db/faction.php';
 require_once './db/connection.php';
-$dataLocation = getAllLocation();
+$dataFaction = getAllFaction();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,26 +15,33 @@ $dataLocation = getAllLocation();
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="short icon" href="./img/crow-head-vector-24390236.jpg">
+    <link rel="stylesheet" href="./css/loading.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-    <link rel="stylesheet" href="./css/loading.css">
 </head>
+
 <body class="preloading">
-    <div class="load">
-        <img src="./img/loading.gif">
-    </div>
+<div class="load">
+		<img src="./img/loading.gif">
+	</div>
     <?php require_once './header.php' ?>
+
     <section class="main clearfix">
-        <img src="./img/Site-background-light.jpg" alt="">
-        <img src="./img/Qp-1745367.jpg" alt="" srcset="">
-        <img src="./img/4_kings.jpg" alt="" srcset="">
-        <img src="./img/Crows_Explode_poster.jpeg.jpg" alt="" srcset="">
-        <img src="./img/Logocrowsinfo2.png" alt="" srcset="">
-        <img src="./img/Zero_logo.jpg" alt="" srcset="">
-        <img src="./img/Worstinfologo.png" alt="" srcset="">
+        <?php foreach ($dataFaction as $value) { ?>
+            <div class="work">
+                <a href="faction_detail.php?id_faction=<?=$value['id_faction']?>">
+                    <img src="img/<?=$value['image_faction']?>" class="media" alt="" />
+                    <div class="caption">
+                        <div class="work_title">
+                            <h1><?= $value['name_faction']?></h1>
+                        </div>
+                    </div>
+                </a>
+            </div> <?php  } ?>
+
     </section>
     <!-- end main -->
-    <script src="./js/loading.js"></script>
+<script src="./js/loading.js"></script>
 </body>
 
 </html>

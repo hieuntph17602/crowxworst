@@ -17,14 +17,15 @@ $dataLocation = findLocationById($id_location);
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<link rel="short icon" href="./img/crow-head-vector-24390236.jpg">
+	<link rel="stylesheet" href="./css/loading.css">
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 
-<body>
+<body class="preloading">
+<div class="load">
+		<img src="./img/loading.gif">
+	</div>
 	<?php require_once './header.php' ?>
-
-	<!-- end header -->
-
 	<section class="main clearfix">
 
 		<section class="top" style="background-image:url('./img/Concrete_Factory.png');">
@@ -48,7 +49,7 @@ $dataLocation = findLocationById($id_location);
 			</div><!-- end content -->
 		</section>
 	</section><!-- end main -->
-
+<script src="./js/loading.js"></script>
 </body>
 
 </html>

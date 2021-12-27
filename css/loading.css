@@ -1,0 +1,23 @@
+.load {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000000;
+    display: block;
+    overflow: hidden;
+}
+
+.load img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -32px;
+    margin-left: -32px;
+}
+
+.preloading {
+    overflow: hidden;
+}

@@ -3,7 +3,7 @@
 function getAllFaction()
 {
     $conn = getConnection();
-    $sql = "SELECT * FROM factions inner join affiliations on factions.id_faction = affiliations.id_faction";
+    $sql = "SELECT * FROM factions inner join affiliations on factions.id_affiliation = affiliations.id_affiliation";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = [];
