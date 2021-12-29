@@ -1,7 +1,7 @@
-<?php
+<?php 
 require_once './../../../db/connection.php';
-require_once './../../../db/post_cate/post_cate.php';
-$id = $_GET['id'];
-deletePost_cate($id);
-header("Location:/Apodio/admin/pages/tables/category_post.php");
-?>
+require_once './../../../db/character.php';
+$id_character = $_GET['id_character'];
+deleteCharacterImage($id_character);
+deleteCharacter($id_character);
+header("Location:/crowxworst/admin/pages/tables/list_character.php");

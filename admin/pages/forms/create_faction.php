@@ -20,7 +20,6 @@ if (isset($_POST['submit'])) {
         'id_affiliation' => $_POST['id_affiliation'],
         'image_faction' => $_FILES['image_faction']['name'],
     ];  
-    var_dump($data);die;
     if (isset($_FILES['image_faction'])) {
         $file = $_FILES['image_faction'];
         $file_name = $file['name'];

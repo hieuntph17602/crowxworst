@@ -145,13 +145,13 @@ h6 {
         z-index: 9999;
     }
     header .logo {
-        margin-top: 100px;
+        margin-top: 50px;
         padding-left: 30px;
     }
     header nav ul {
         display: block;
         overflow: hidden;
-        margin-top: 100px;
+        margin-top: 50px;
         list-style: none;
     }
     header nav ul li {

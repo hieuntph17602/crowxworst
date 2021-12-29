@@ -30,15 +30,6 @@ $dataLocation = findLocationById($id_location);
 
 		<section class="top" style="background-image:url('./img/Concrete_Factory.png');">
 			<div class="wrapper content_header clearfix">
-				<div class="work_nav">
-
-					<ul class="btn clearfix">
-						<li><a href="#" class="previous" data-title="Previous"></a></li>
-						<li><a href="index.html" class="grid" data-title="Portfolio"></a></li>
-						<li><a href="#" class="next" data-title="Next"></a></li>
-					</ul>
-
-				</div><!-- end work_nav -->
 				<h1 class="title"><?=$dataLocation['name_location'] ?></h1>
 			</div>
 		</section><!-- end top -->
