@@ -96,16 +96,6 @@ if (isset($_POST['submit'])) {
                         <div class="card-header">
                             <h3 class="card-title"></h3>
                         </div>
-                        <?php
-                        if (isset($_SESSION['error'])) { ?>
-                            <div id="toastsContainerTopRight" class="toasts-top-right fixed">
-                                <div class="toast bg-danger fade show" role="alert" aria-live="assertive" aria-atomic="true">
-                                    <div class="toast-header"><strong class="mr-auto">Error</strong><small>Cảnh báo</small><button data-dismiss="toast" type="button" class="ml-2 mb-1 close" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                                    <div class="toast-body"><?php echo $_SESSION['error'];
-                                                            unset($_SESSION[['error']]) ?></div>
-                                </div>
-                            </div>
-                        <?php } ?>
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form id="myForm" action="" method="POST" enctype="multipart/form-data">

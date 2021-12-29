@@ -62,5 +62,5 @@ if ($num > 0 && $search != "") {
         </html>
 <?php }
 } else {
-    echo "Khong tim thay ket qua!";
+    header("Location:./error.php");
 }

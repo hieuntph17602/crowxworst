@@ -7,7 +7,7 @@ if (isset($_REQUEST['submit'])) {
         die;
     }
 }
-$query = "select * from characters where name_character like '%$search%'";
+$query = "select * from characters where name_character like '%$search%' or nickname_character like '%$search%'";
 
 // Kết nối sql
 $conn = mysqli_connect("localhost", "root", "", "crow");
@@ -62,5 +62,5 @@ if ($num > 0 && $search != "") {
         </html>
 <?php }
 } else {
-    echo "Khong tim thay ket qua!";
+    header("Location:./error.php");
 }

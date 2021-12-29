@@ -25,13 +25,13 @@ $dataLocation = getAllLocation();
     </div>
     <?php require_once './header.php' ?>
     <section class="main clearfix">
-        <img src="./img/Site-background-light.jpg" alt="">
-        <img src="./img/Qp-1745367.jpg" alt="" srcset="">
+     <img src="./img/Site-background-light.jpg" alt="">
+     <a href="./manga_detail.php?id_manga=6"><img src="./img/Qp-1745367.jpg" alt="" srcset=""></a>
         <img src="./img/4_kings.jpg" alt="" srcset="">
-        <img src="./img/Crows_Explode_poster.jpeg.jpg" alt="" srcset="">
-        <img src="./img/Logocrowsinfo2.png" alt="" srcset="">
-        <img src="./img/Zero_logo.jpg" alt="" srcset="">
-        <img src="./img/Worstinfologo.png" alt="" srcset="">
+        <a href="./manga_detail.php?id_manga=5"><img src="./img/Crows_Explode_poster.jpeg.jpg" alt="" srcset="">
+       <a href="./manga_detail.php?id_manga=2"><img src="./img/Logocrowsinfo2.png" alt="" srcset=""></a>
+       <a href="./manga_detail.php?id_manga=4"><img src="./img/Zero_logo.jpg" alt="" srcset=""></a>
+        <a href="./manga_detail.php?id_manga=3"><img src="./img/Worstinfologo.png" alt="" srcset=""></a>
     </section>
     <!-- end main -->
     <script src="./js/loading.js"></script>
