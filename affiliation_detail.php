@@ -8,7 +8,7 @@ $dataAffiliation = findAffiliationById($id_affiliation);
 <html lang="en">
 
 <head>
-	<title>CrowXworst</title>
+	<title>CrowXworst | <?php echo $dataAffiliation['name_affiliation'] ?></title>
 	<meta charset="utf-8">
 	<meta name="author" content="pixelhint.com">
 	<meta name="description" content="Magnetic is a stunning responsive HTML5/CSS3 photography/portfolio website  template" />
