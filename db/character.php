@@ -3,8 +3,8 @@
 function getAllCharacter()
 {
     $conn = getConnection();
-    $sql = "SELECT * FROM characters inner join locations on characters.id_location = locations.id_location".
-    "inner join factions on characters.id_faction = factions.id_faction inner join affiliation on characters.id_affiliation = affiliation.id_affiliation";
+    $sql = "SELECT * FROM characters inner join locations on characters.id_location = locations.id_location ".
+    "inner join factions on characters.id_faction = factions.id_faction inner join affiliations on characters.id_affiliation = affiliations.id_affiliation";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = [];
@@ -56,10 +56,10 @@ function getAllImageCharacter($id_character)
 function findCharacterById($id)
 {
     $conn = getConnection();
-    $sql = "SELECT * FROM characters inner join locations on characters.id_location = locations.id_location".
-    "inner join factions on characters.id_faction = factions.id_faction inner join affiliation on characters.id_affiliation = affiliation.id_affiliation WHERE id_character=:id_character";    
+    $sql = "SELECT * FROM characters inner join locations on characters.id_location = locations.id_location ".
+    "inner join factions on characters.id_faction = factions.id_faction inner join affiliations on characters.id_affiliation = affiliations.id_affiliation WHERE id_character=:id_character";    
     $stmt = $conn->prepare($sql);
-    $stmt->execute(['id_affiliation' => $id]);
+    $stmt->execute(['id_character' => $id]);
     $data = $stmt->fetch();
 
     $row = [
